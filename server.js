@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "./build")));
 
 //routes
 app.use("/api/v1/auth", authRoutes);
@@ -32,7 +32,7 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
 app.use("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./build/index.html"));
 });
 
 app.listen(port, (req, res) => {
