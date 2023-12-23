@@ -5,10 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon -r dotenv/config --experimental-json-modules server.js",
-    "client": "npm start --prefix ./client",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
-  },
+    "start": "node -r dotenv/config --experimental-json-modules server.js",
+    "dev": "nodemon -r dotenv/config --experimental-json-modules server.js"
+ },
   "keywords": [],
   "author": "",
   "license": "ISC",
